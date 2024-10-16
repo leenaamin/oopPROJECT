@@ -1,6 +1,3 @@
-
-package com.mycompany.oopprojecr;
-
 /**
   @author leeno
  */
@@ -34,8 +31,8 @@ public class USER {
     public String toString() {
         return "USER{" + "PASNGER_NAME=" + PASNGER_NAME + ", PASNGER_ID=" + PASNGER_ID + '}';
     }
-    
-    
-    
-    
 }
+    
+    
+    
+
