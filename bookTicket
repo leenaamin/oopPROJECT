@@ -1,0 +1,16 @@
+package flightbooking;
+
+/**
+ * interface bookTicket
+ * @author Ghada
+ */
+public interface bookTicket {
+    
+    
+     /*
+     * abstract method 
+     * implements bookTicket in subclass of abstract class
+     * @return price in subclass
+     */
+    public abstract double GetSeatPrice();
+}
