@@ -13,9 +13,9 @@ public abstract class ticket implements bookTicket {
         public int NumID;
 
     /**
-     * An object from class Flight for details 
+     * An object from class Flights for details 
      */
-        public Flight DetailsF;
+        public Flights DetailsF;
 
     /**
      *An object from class Passenger for Passenger details
@@ -51,7 +51,7 @@ public abstract class ticket implements bookTicket {
      * @param DetailsF
      * @param DetailsP
      */
-    public ticket( int NumID,Flight DetailsF, Passenger DetailsP) {
+    public ticket( int NumID,Flights DetailsF, Passenger DetailsP) {
         this.NumID = (int)(Math.random()*(101));
         this.DetailsF = DetailsF;
         this.DetailsP = DetailsP;
@@ -65,7 +65,7 @@ public abstract class ticket implements bookTicket {
      * @return
      */
     
-    public abstract ticket clone (ticket id ,Flight f);
+    public abstract ticket clone (ticket id ,Flights f);
 
      /**
      * method toString Override    
