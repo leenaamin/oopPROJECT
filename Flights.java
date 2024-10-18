@@ -5,7 +5,7 @@
  * @author Wehad
  */
 public class Flights {
-     /**
+      /**
     *Flight ID attribute of the flight number
     */ 
     private int FlightID;
@@ -37,7 +37,7 @@ public class Flights {
     /**
      * Polymorphism  object - array of object( sub class EconomicTicket and BusinessTicket and FirstClassTicket)
      */
-        public Ticket[] tickets = new Ticket[3];
+        public ticket[] tickets = new ticket[3];
         
     /**
     * variable  in loop addTicket
@@ -191,7 +191,7 @@ public class Flights {
  * above in Ticket[] tickets = new Ticket[3]; Originally we have 3 subclass EconomicTicket and BusinessTicket and FirstClassTicket  So on every Flight we will add them
  * @param t   public Ticket[] tickets = new Ticket[3];
 */
-    public void addTicket(Ticket t) {
+    public void addTicket(ticket t) {
         if (num < 3) {
             tickets[num++] = t;
         }
@@ -201,7 +201,7 @@ public class Flights {
   * @param i 
   * @return tickets
   */
-    public Ticket getTicket(int i) {
+    public ticket getTicket(int i) {
         return tickets[i];
     }
 
@@ -213,9 +213,22 @@ public class Flights {
         for (int i = 0; i < 3; i++) {
             System.out.println((i+1)+"-"+tickets[i]);
         }
-         System.out.println("Please choose Ticket");
+         System.out.println("Please choose  Ticket");
     }
-
+    
+/**
+ * This method is to see if they are equal
+ * @param o
+ * @return if they equals or not  
+ */
+    @Override
+    public boolean equals(Object o){
+        Flights other = (Flights) o;
+        return this.FlightID == other.FlightID;
+    }
+    
+    
+    
     /**
      *method toString Override  
      * @return string information
@@ -227,5 +240,5 @@ public class Flights {
                 + " ArrivalData: " + ArrivalData+"\n-------------------------------------------------------------------";
         
     }
-
 }
+
