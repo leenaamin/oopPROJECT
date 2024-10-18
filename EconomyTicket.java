@@ -1,4 +1,4 @@
-
+package flightbooking;
 
 /**
   @author leeno
