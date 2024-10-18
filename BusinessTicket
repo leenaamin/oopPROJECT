@@ -29,6 +29,26 @@ private String SeatType;
     public BusinessTicket(int NumID, Flights DetailsF, Passenger DetailsP) {
         super( NumID,DetailsF, DetailsP);
     }
+    /**
+     * Getter And Setter
+     * @param SeatType 
+     * @param Price 
+     */
+    public String getSeatType() {
+        return SeatType;
+    }
+
+    public void setSeatType(String SeatType) {
+        this.SeatType = SeatType;
+    }
+
+    public double getPrice() {
+        return Price;
+    }
+
+    public void setPrice(double Price) {
+        this.Price = Price;
+    }
      /**
      * implements BookTicket  
      * @return Price 
