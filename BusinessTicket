@@ -2,7 +2,7 @@ package flightbooking;
 
 /**
  *
- * @author Wajn
+ * @author Wajn 
  */
 
 public class BusinessTicket extends ticket {
