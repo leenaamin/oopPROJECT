@@ -2,7 +2,7 @@ package flightbooking;
 /**
  *@author wajn
  * BusinessTicket inheritance from ticket its subclass 
- * All Implemented Interfaces:BookTicket 
+ * All Implemented Interfaces:bookTicket 
  * this class is subclass from ticket and Each ticket will have its own category and each category has a different price for each flight so in this class 
 we Override method GetSeatPrice and clone also to string 
  */
@@ -57,7 +57,7 @@ private String SeatType;
         this.Price = Price;
     }
      /**
-     * implements BookTicket  
+     * implements bookTicket  
      * @return Price 
      */
       @Override
