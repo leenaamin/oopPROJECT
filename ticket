@@ -15,12 +15,12 @@ public abstract class ticket implements bookTicket {
     /**
      * An object from class Flight for details 
      */
-        public Flight DetailsFlight;
+        public Flight DetailsF;
 
     /**
      *An object from class Passenger for Passenger details
      */
-        public Passenger PassengDetails;
+        public Passenger DetailsP;
     /**
      * Number of row for seats 
      */
@@ -48,19 +48,18 @@ public abstract class ticket implements bookTicket {
     /**
      *constructor Ticket
      * @param NumID
-     * @param DetailsFlight
-     * @param PassengDetails
+     * @param DetailsF
+     * @param DetailsP
      */
-    public ticket( int NumID,Flight DetailsFlight, Passenger PassengDetails) {
+    public ticket( int NumID,Flight DetailsF, Passenger DetailsP) {
         this.NumID = (int)(Math.random()*(101));
-        this.DetailsFlight = DetailsFlight;
-        this.PassengDetails = PassengDetails;
+        this.DetailsF = DetailsF;
+        this.DetailsP = DetailsP;
     }
 
     /**
-     *ticket clone the ticket inside the flight, we will give the passenger one of them, and the passenger will change the ticket
-     *so it will not affect the other copies, It is supposed to take a separate copy of it 
-     *(create a new object of the same type,but it will be different for each passenger)
+     *this method will clone the ticket inside the flight, we will give each passenger a copy, and the passenger will change the ticket info
+     *it will not affect the other copies, it is supposed to take a separate copy of it (create a new object of the same type,but it will be different for each passenger)
      * @param id
      * @param f
      * @return
