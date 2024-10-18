@@ -222,9 +222,9 @@ public class Flights {
      */
     @Override
     public String toString() {
-        return " FlightID=" + FlightID + "\n\tDeparture=" + Departure + " DepartureTime=" + DepartureTime
-                + " DepartureDate=" + DepartureData + "\n\tArrival=" + Arrival + "ArrivalTime=" + ArrivalTime
-                + " ArrivalData=" + ArrivalData+"\n-------------------------------------------------------------------";
+        return " FlightID: " + FlightID + "\n\t Departure:" + Departure + " DepartureTime: " + DepartureTime
+                + " DepartureDate: " + DepartureData + "\n\t Arrival: " + Arrival + " ArrivalTime: " + ArrivalTime
+                + " ArrivalData: " + ArrivalData+"\n-------------------------------------------------------------------";
         
     }
 
