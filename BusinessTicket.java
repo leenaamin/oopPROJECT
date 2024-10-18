@@ -1,21 +1,18 @@
-package infinty;
+package flightbooking;
 /**
- *@author Manar
- * BusinessTicket inheritance from Ticket its subclass 
+ *@author wajn
+ * BusinessTicket inheritance from ticket its subclass 
  * All Implemented Interfaces:BookTicket 
- * this class is subclass from Ticket and Each ticket will have its own category and each category has a different price for each flight so in this class 
+ * this class is subclass from ticket and Each ticket will have its own category and each category has a different price for each flight so in this class 
 we Override method GetSeatPrice and clone also to string 
  */
 
-public class BusinessTicket extends Ticket {
+public class BusinessTicket extends ticket {
      /**
-     * SeatType of BusinessTicket 
+     * attributs
      */
-public String SeatType;
-     /**
-     * Price of BusinessTicket 
-     */
- public double Price;
+private String SeatType;
+ private double Price;
      /**
      * default constructors BusinessTicket 
      */
@@ -28,36 +25,55 @@ public String SeatType;
      * @param Price 
      */
     public BusinessTicket(String SeatType,double Price ){
-    this.SeatType="Business";
+    this.SeatType=SeatType;
     this.Price=Price;
     }
    /** constructors BusinessTicket
      * @param NumID 
-     * @param DetailsFlight 
-     * @param PassengDetails
+     * @param DetailsF 
+     * @param DetailsP
      */
-    public BusinessTicket(int NumID, Flight DetailsFlight, Passenger PassengDetails) {
-        super( NumID,DetailsFlight, PassengDetails);
+    public BusinessTicket(int NumID, Flights DetailsF, Passenger DetailsP) {
+        super( NumID,DetailsF, DetailsP);
+    } 
+      /**
+     * Getter And Setter
+     * @param SeatType 
+     * @param Price 
+     */
+       public String getSeatType() {
+        return SeatType;
     }
 
-      @Override // implements BookTicket 
+    public void setSeatType(String SeatType) {
+        this.SeatType = SeatType;
+    }
+
+    public double getPrice() {
+        return Price;
+    }
+
+    public void setPrice(double Price) {
+        this.Price = Price;
+    }
      /**
      * implements BookTicket  
      * @return Price 
      */
+      @Override
        public double GetSeatPrice(){
 
          return Price ;
        }
      /** method clone Override   
-     * @param  id  Ticket 
+     * @param  id  ticket 
      * @param F 
      * @return t 
      */
     @Override     
-public  Ticket clone (Ticket id ,Flight F){
- Ticket t= new BusinessTicket(SeatType , Price);
-  t.DetailsFlight=F;
+public  ticket clone (ticket id ,Flights F){
+ ticket t= new BusinessTicket(SeatType , Price);
+  t.DetailsF=F;
  t.NumID=(int)(Math.random()*(101));
  return t;
  }
