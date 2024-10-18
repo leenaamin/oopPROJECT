@@ -5,9 +5,9 @@ package flightbooking;
  * @author Wajn
  */
 
-public class BusinessTicket extends Ticket {
- public String SeatType;
- public double Price;
+public class BusinessTicket extends ticket {
+private String SeatType;
+ private double Price;
     /**  default constructors BusinessTicket  */
     public BusinessTicket() {
           
@@ -23,11 +23,11 @@ public class BusinessTicket extends Ticket {
     }
     /** constructors BusinessTicket
      * @param NumID 
-     * @param DetailsFlight 
-     * @param PassengDetails
+     * @param DetailsF 
+     * @param DetailsP
      */
-    public BusinessTicket(int NumID, Flight DetailsFlight, Passenger PassengDetails) {
-        super( NumID,DetailsFlight, PassengDetails);
+    public BusinessTicket(int NumID, Flights DetailsF, Passenger DetailsP) {
+        super( NumID,DetailsF, DetailsP);
     }
      /**
      * implements BookTicket  
@@ -40,13 +40,13 @@ public class BusinessTicket extends Ticket {
        }
     /** method clone Override   
      * @param  id  Ticket 
-     * @param F    Flight
+     * @param F    Flights
      * @return t 
      */
     @Override     
-     public  Ticket clone (Ticket id ,Flight F){
-      Ticket t= new BusinessTicket(SeatType , Price);
-      t.DetailsFlight=F;
+     public  ticket clone (ticket id ,Flights F){
+      ticket t= new BusinessTicket(SeatType , Price);
+      t.DetailsF=F;
       t.NumID=(int)(Math.random()*(101));
         return t;
       }
