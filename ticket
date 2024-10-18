@@ -1,0 +1,79 @@
+package flightbooking;
+
+/**
+ *
+ * @author Ghada
+ */
+public abstract class ticket implements bookTicket {
+    //    Random ticket number for each flight
+
+    /**
+     * The number of ID passenger
+     */
+        public int NumID;
+
+    /**
+     * An object from class Flight for details 
+     */
+        public Flight DetailsFlight;
+
+    /**
+     *An object from class Passenger for Passenger details
+     */
+        public Passenger PassengDetails;
+    /**
+     * Number of row for seats 
+     */
+        public static final int Row = 10;
+
+    /**
+     *Number of column for seats 
+     */
+    public static final int Col = 6;
+
+    /**
+     * Array for the seats number 
+     * It won't be booked in the system 
+     * It will come at the time of boarding in the main
+     * (we only show you the seats you can see at that time so you know about them)
+     */
+    public char[][] SeatNumber = new char[Row][Col];
+
+    /**
+     *default constructor Ticket
+     */
+    public ticket(){
+}
+
+    /**
+     *constructor Ticket
+     * @param NumID
+     * @param DetailsFlight
+     * @param PassengDetails
+     */
+    public ticket( int NumID,Flight DetailsFlight, Passenger PassengDetails) {
+        this.NumID = (int)(Math.random()*(101));
+        this.DetailsFlight = DetailsFlight;
+        this.PassengDetails = PassengDetails;
+    }
+
+    /**
+     *ticket clone the ticket inside the flight, we will give the passenger one of them, and the passenger will change the ticket
+     *so it will not affect the other copies, It is supposed to take a separate copy of it 
+     *(create a new object of the same type,but it will be different for each passenger)
+     * @param id
+     * @param f
+     * @return
+     */
+    
+    public abstract ticket clone (ticket id ,Flight f);
+
+     /**
+     * method toString Override    
+     * @return   String For NumID
+     */
+    @Override
+    public String toString() {
+        return " NumID= "+NumID;
+    }
+}
