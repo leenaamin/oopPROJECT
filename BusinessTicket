@@ -2,7 +2,7 @@ package flightbooking;
 
 /**
  *
- * @author Ghada
+ * @author Wajn
  */
 
 public class BusinessTicket extends Ticket {
@@ -40,7 +40,7 @@ public class BusinessTicket extends Ticket {
        }
     /** method clone Override   
      * @param  id  Ticket 
-     * @param F 
+     * @param F    Flight
      * @return t 
      */
     @Override     
