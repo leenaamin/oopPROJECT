@@ -1,50 +1,57 @@
 package flightbooking;
 
 /**
-  @author leeno
+ @author leeno
  */
-public class EconomyTicket {
+public class EconomyTicket extends ticket {
      /**
-     * SeatType attribute of EconomicTicket 
+      SeatType attribute of EconomyTicket class
      */
  public String SeatType;
     /**
-     * Price of attribute EconomicTicket 
+      Price  attribute of EconomyTicket calss
      */
  public double Price;
      /**
-     * default constructors EconomicTicket
+      default constructors for EconomyTicket class
      */
  public EconomyTicket(){
 
 }
+  
     /**
-     * constructors EconomicTicket
-     * @param SeatType
-     * @param Price 
+      @param Price 
      */
 public EconomyTicket(String SeatType,double Price ){
-    this.SeatType="Economic";
+    this.SeatType="Economy";
     this.Price=Price;
  }
-  /** constructors EconomicTicket
-     * @param NumID 
-     * @param DetailsFlight 
-     * @param PassengDetails
+
+  
+  
+  /** constructors for EconomyTicket calss
+      @param NumID 
+      @param DetailsFlight 
+      @param PassengDetails
      */
-    public EconomyTicket ( int NumID,Flights DetailsFlight, Passenger PassengDetails) {
+    public EconomyTicket ( int NumID, Flights DetailsFlight, Passenger PassengDetails) {
         super(NumID ,DetailsFlight, PassengDetails);
     }
+  
+
+  
      @Override
     // implements BookTicket 
      /**
-     * implements BookTicket  
-     * @return Price 
+      implements BookTicket  
+      @return Price 
      */
        public double GetSeatPrice(){
 
          return Price ;
        }
+
+  
        
        /**
      * method clone Override   
@@ -55,14 +62,16 @@ public EconomyTicket(String SeatType,double Price ){
  @Override
  public  ticket clone (ticket id ,Flights F){
  ticket t= new EconomyTicket(SeatType , Price);
- t.DetailsFlight=F;
+ t.FlightsDetails=F;
  t.NumID= (int)(Math.random()*(101));
  return t;
  }
+ 
+ 
     /**
-     * method toString Override    
-     * @return   String For seat type information 
-     * will display string of this object
+      method toString Override    
+      @return   String For seat type information 
+      will display string of this object
      */
     @Override
     public String toString() {
@@ -71,4 +80,5 @@ public EconomyTicket(String SeatType,double Price ){
 
     }
     
+
 
