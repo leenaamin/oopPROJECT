@@ -3,8 +3,6 @@ package flightbooking;
  *@author wajn
  * BusinessTicket inheritance from ticket its subclass 
  * All Implemented Interfaces:bookTicket 
- * this class is subclass from ticket and Each ticket will have its own category and each category has a different price for each flight so in this class 
-we Override method GetSeatPrice and clone also to string 
  */
 
 public class BusinessTicket extends ticket {
@@ -12,59 +10,60 @@ public class BusinessTicket extends ticket {
      * attributs
      */
 private String SeatType;
- private double Price;
+private double additionalAmenitiesFees;
      /**
      * default constructors BusinessTicket 
      */
     public BusinessTicket() {
-          
+       super();
     }
-     /**
-     * constructors BusinessTicket
-     * @param SeatType 
-     * @param Price 
+       /**
+     * Parameterized constructor
+     * @param seatType
+     * @param additionalAmenitiesFees
      */
-    public BusinessTicket(String SeatType,double Price ){
+    public BusinessTicket(String SeatType,double additionalAmenitiesFees ){
     this.SeatType=SeatType;
-    this.Price=Price;
+    this.additionalAmenitiesFees = additionalAmenitiesFees;
     }
    /** constructors BusinessTicket
      * @param NumID 
      * @param DetailsF 
      * @param DetailsP
+     * @param seatType
+     * @param additionalAmenitiesFees
      */
-    public BusinessTicket(int NumID, Flights DetailsF, Passenger DetailsP) {
+    public BusinessTicket(int NumID, Flights DetailsF, Passenger DetailsP, String seatType, double additionalAmenitiesFees) {
         super( NumID,DetailsF, DetailsP);
+        this.seatType = seatType;
+        this.additionalAmenitiesFees = additionalAmenitiesFees;
     } 
       /**
      * Getter And Setter
      * @param SeatType 
-     * @param Price 
+     * @param additionalAmenitiesFees 
      */
-       public String getSeatType() {
-        return SeatType;
-    }
-
-    public void setSeatType(String SeatType) {
+  public void setSeatType(String SeatType) {
         this.SeatType = SeatType;
     }
-
-    public double getPrice() {
-        return Price;
+     public String getSeatType() {
+        return SeatType;
     }
-
-    public void setPrice(double Price) {
-        this.Price = Price;
+  public void setAdditionalAmenitiesFees(double additionalAmenitiesFees) {
+        this.additionalAmenitiesFees = additionalAmenitiesFees;
     }
-     /**
-     * implements bookTicket  
-     * @return Price 
+    public double getAdditionalAmenitiesFees() {
+        return additionalAmenitiesFees;
+    }
+    /**
+     * This method implements the method that is in the book ticket interface 
+     * it returns the price of the seat
+     * @return the price of the ticket
      */
-      @Override
-       public double GetSeatPrice(){
-
-         return Price ;
-       }
+    @Override
+    public double GetSeatPrice() {
+        return (getBasePrice() + additionalAmenitiesFees);
+    }
      /** method clone Override   
      * @param  id  ticket 
      * @param F 
@@ -72,19 +71,42 @@ private String SeatType;
      */
     @Override     
 public  ticket clone (ticket id ,Flights F){
- ticket t= new BusinessTicket(SeatType , Price);
+ ticket t= new BusinessTicket(SeatType , additionalAmenitiesFees);
   t.DetailsF=F;
  t.NumID=(int)(Math.random()*(101));
  return t;
  }
-     /**
-     * method toString Override    
-     * @return   String For seat type information 
-     * will display string of this object
+ /**
+     * This method overrides the equals method in the ticket class
+     * It checks if two tickets are equal to each other or not
+     * @return true if the two objects are equal to each other and false if they are not
      */
-    @Override
-    public String toString() {
-        return  "SeatType is : " + SeatType +","+" Price ="+Price+" Rial"+"\n*Power-Wi-Fi&USB  *On-Demand TV  *Prayer Area *fresh meals \n Baggage Info: 1 Piece + 7 Kilos (Per Person)" ;
+@Override
+public boolean equals(Object obj)
+{
+    if (this == obj) return true;
+    
+    
+    if (obj == null || !(obj instanceof BusinessTicket)) return false;
+    
+    
+    BusinessTicket other = (BusinessTicket) obj;
+    
+    
+    return (this.seatType.equals(other.seatType) &&
+           this.additionalAmenitiesFees == other.additionalAmenitiesFees);
+    
+}
+    
+    /**
+     * This method overrides the method in the ticket class
+     * @return a string representation of the ticket's information
+     */
+    @Override 
+    public String toString()
+    {
+        return (super.toString() + "\nSeat Type: " + seatType + "\nPrice: " + GetSeatPrice() + "SAR \nIt includes Wi-Fi, "
+                + "Overhead TV, Prayer Area, and Fresh meals \nBaggage Info: 1 piece luggage 7 kilos(Per Person)");
     }
     
 }
