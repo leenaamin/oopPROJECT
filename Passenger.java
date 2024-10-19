@@ -205,12 +205,12 @@ public class Passenger implements bookTicket {
     @Override
     public String toString() {
        
-        String s= "FirstName=" + FirstName + ", LastName=" + LastName + 
-                ", Gender=" + Gender + ", Age=" + Age + 
-                ", PassportNum=" + PassportNum +"\n";
+        String s= "FirstName: " + FirstName + ", LastName: " + LastName + 
+                ", Gender: " + Gender + ", Age: " + Age + 
+                ", PassportNum: " + PassportNum +"\n";
                 for (Ticket t : allTickets) {
                     
-                    s+=t.DetailsFlight+"\n"+"NumID="+ t.NumID+"\n" ;
+                    s+=t.DetailsFlight+"\n"+" NumID:"+ t.NumID+"\n" ;
                     s+=t+"\n________________________________________________\n";
         }
                 s+= GetSeatPrice();
