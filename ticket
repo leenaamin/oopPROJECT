@@ -7,6 +7,11 @@ package flightbooking;
 public abstract class ticket implements bookTicket {
     //    Random ticket number for each flight
 
+    
+     /**
+     * The Base Price of the seat
+     */
+        private double basePrice = 0;
     /**
      * The number of passenger's ID
      */
@@ -44,6 +49,14 @@ public abstract class ticket implements bookTicket {
 
     public void setDetailsP(Passenger DetailsP) {
         this.DetailsP = DetailsP;
+    }
+
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+    public void setBasePrice(double basePrice) {
+        this.basePrice = basePrice;
     }
 
    
@@ -112,7 +125,7 @@ public abstract class ticket implements bookTicket {
      */
     @Override
     public String toString() {
-        return " ID Number : "+NumID;
+        return " ID Number : "+NumID ;
     }
     /**
      * method equals override 
