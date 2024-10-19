@@ -8,23 +8,51 @@ public abstract class ticket implements bookTicket {
     //    Random ticket number for each flight
 
     /**
-     * The number of ID passenger
+     * The number of passenger's ID
      */
-        public int NumID;
+        private int NumID;
 
     /**
-     * An object from class Flights for details 
+     * An object from class Flight for flight details 
      */
-        public Flights DetailsF;
+       private Flights DetailsF;
 
     /**
-     *An object from class Passenger for Passenger details
+     *An object from class Passenger for passenger details
      */
-        public Passenger DetailsP;
+      private Passenger DetailsP;
+
+         public int getNumID() {
+        return NumID;
+    }
+
+    public void setNumID(int NumID) {
+        this.NumID = NumID;
+    }
+
+    public Flights getDetailsF() {
+        return DetailsF;
+    }
+
+    public void setDetailsF(Flights DetailsF) {
+        this.DetailsF = DetailsF;
+    }
+
+    public Passenger getDetailsP() {
+        return DetailsP;
+    }
+
+    public void setDetailsP(Passenger DetailsP) {
+        this.DetailsP = DetailsP;
+    }
+
+   
+
     /**
      * Number of row for seats 
      */
-        public static final int Row = 10;
+  
+    public static final int Row = 10;
 
     /**
      *Number of column for seats 
@@ -35,10 +63,21 @@ public abstract class ticket implements bookTicket {
      * Array for the seats number 
      * It won't be booked in the system 
      * It will come at the time of boarding in the main
-     * (we only show you the seats you can see at that time so you know about them)
      */
-    public char[][] SeatNumber = new char[Row][Col];
+    private char[][] SeatNumber = new char[Row][Col];
 
+ 
+    public char[][] getSeatNumber() {
+        return SeatNumber;
+    }
+
+    public void setSeatNumber(char[][] SeatNumber) {
+        this.SeatNumber = SeatNumber;
+    }
+
+    
+    
+    
     /**
      *default constructor Ticket
      */
@@ -73,6 +112,19 @@ public abstract class ticket implements bookTicket {
      */
     @Override
     public String toString() {
-        return " NumID= "+NumID;
+        return " ID Number : "+NumID;
     }
+    /**
+     * method equals override 
+     * to make sure every passenger has unique Id Number
+     * @param obj
+     * @return 
+     */
+    @Override
+    public boolean equals(Object obj) {
+        ticket other = (ticket) obj;
+        
+        return this.NumID == other.NumID;
+    }
+    
 }
