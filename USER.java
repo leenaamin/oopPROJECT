@@ -1,38 +1,97 @@
-/**
-  @author leeno
- */
 public class USER {
+     /**
+     *   username of User
+     */
+    public String username;
+
+    /**
+     * password of User
+     */
+    public static String password;
     
-    private String PASNGER_NAME;
-    private String PASNGER_ID;
+    /**
+     * default constructors User
+     */
+    public USER() {
+    }
     
-    public USER (String name,String id){
-        this.PASNGER_NAME=name;
-        this.PASNGER_ID=id;
+    /**
+     *constructors User
+     * @param username 
+     */
+    public USER(String username) {
+        this.username = username;
     }
-
-    public String getPASNGER_NAME() {
-        return PASNGER_NAME;
+    
+    /**
+     * method Check password
+     * @param password
+     * @return false if length less than 8 
+     * @return true if length equal 8
+     */
+    public boolean Check(String password) {
+        if (password.length() < 8) {
+            return false;
+        }
+        int charCount = 0;
+        int numCount = 0;
+        for (int i = 0; i < password.length(); i++) {
+            // قطع حرف واحد من الباسوورد لنص (0,1)
+            //Take the character at index i as sting "Take only one letter" 
+            String ss = password.substring(i, i + 1);
+            /* exception handling
+            try Take the String and try to convert it to a number Integer and put it in the variable x
+            If it works then it is a number and add the number ( 1 )
+            */
+            try {
+                int x = Integer.parseInt(ss);
+                numCount++;
+            } 
+             /* exception handling
+             If it not works then go to catch and This means that it is
+            not a number so if char add 1 or if not return false 
+            */
+            catch (Exception e) {
+                if (Check(ss.charAt(0))) {
+                    charCount++;
+                } else {
+                    return false;
+                }
+            }
+        }
+//       
+        if ((charCount >= 2 && numCount >= 2)) {
+            USER.password = password;
+            return true;
+        }
+        return false;
     }
+//overloading 
 
-    public String getPASNGER_ID() {
-        return PASNGER_ID;
+    /**
+     * method overloading
+     * @param ch is character
+     * @return true if check condition
+     */
+    public boolean Check(char ch) {
+        ch = Character.toUpperCase(ch);
+        return (ch >= 'A' && ch <= 'Z');
     }
-
-    public void setPASNGER_NAME(String PASNGER_NAME) {
-        this.PASNGER_NAME = PASNGER_NAME;
-    }
-
-    public void setPASNGER_ID(String PASNGER_ID) {
-        this.PASNGER_ID = PASNGER_ID;
-    }
-
+    
+       
+    /**
+     *method toString Override  
+     * @return string 
+     */
     @Override
     public String toString() {
-        return "USER{" + "PASNGER_NAME=" + PASNGER_NAME + ", PASNGER_ID=" + PASNGER_ID + '}';
+        return "username:" + username + "password:" + password;
     }
 }
     
     
+
+
+
     
 
