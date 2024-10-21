@@ -20,35 +20,35 @@ public class Flightbooking {
  
     public static void main(String[] args) {
         AllFlifht = new ArrayList<Flights>();
-        Flights f = new Flights(102, "Jeddah ", "1:20 am", "1-1-1444", "Riyadh", "3:10 am", "1-1-1444");
+        Flights f = new Flights(102, "Jeddah ", "1:20 am", "5/1/2025", "Riyadh", "3:10 am", "5/1/2025");
         f.addTicket(new EconomyTicket("Economic", 450));
         f.addTicket(new BusinessTicket("Business", 450, 600));
         f.addTicket(new FirstClassTicket("FirstClass", 450, 900));
-        Flights f2 = new Flights(103, "Jeddah ", "1:30 am", "1-1-1444", "Riyadh", "3:50 am", "1-1-1444");
+        Flights f2 = new Flights(103, "Jeddah ", "1:30 am", "7/1/2025", "Riyadh", "3:50 am", "7/1/2025");
         f2.addTicket(new EconomyTicket("Economic", 300));
         f2.addTicket(new BusinessTicket("Business", 300, 600));
         f2.addTicket(new FirstClassTicket("FirstClass", 300, 900));
-        Flights f3 = new Flights(104, "Riyadh ", "15:00 pm", "3-1-1444", "Jeddah", "16:55 pm", "3-1-1444");
+        Flights f3 = new Flights(104, "Riyadh ", "15:00 pm", "7/1/2025", "Jeddah", "16:55 pm", "7/1/2025");
         f3.addTicket(new EconomyTicket("Economic", 320));
         f3.addTicket(new BusinessTicket("Business", 320, 600));
         f3.addTicket(new FirstClassTicket("FirstClass", 320, 900));
-        Flights f4 = new Flights(105, "Riyadh ", "10:50 am", "4-1-1444", "Jeddah", "12:40 am", "4-1-1444");
+        Flights f4 = new Flights(105, "Riyadh ", "10:50 am", "8/1/2025", "Jeddah", "12:40 am", "8/1/2025");
         f4.addTicket(new EconomyTicket("Economic", 520));
         f4.addTicket(new BusinessTicket("Business", 520, 600));
         f4.addTicket(new FirstClassTicket("FirstClass", 520, 900));
-        Flights f5 = new Flights(105, "Taif ", "4:00 am", "4-1-1444", "Jeddah", "5:40 am", "4-1-1444");
+        Flights f5 = new Flights(105, "Taif ", "4:00 am", "8/1/2025, "Jeddah", "5:40 am", "8/1/2025");
         f5.addTicket(new EconomyTicket("Economic", 310));
         f5.addTicket(new BusinessTicket("Business", 310, 600));
         f5.addTicket(new FirstClassTicket("FirstClass", 310, 900));
-        Flights f6 = new Flights(105, "Madinah ", "4:10 am", "5-1-1444", "Dammam", "6:55 am", "4-1-1444");
+        Flights f6 = new Flights(105, "Madinah ", "4:10 am", "11/1/2025", "Dammam", "6:55 am", "11/1/2025");
         f6.addTicket(new EconomyTicket("Economic", 430));
         f6.addTicket(new BusinessTicket("Business", 430, 600));
         f6.addTicket(new FirstClassTicket("FirstClass", 430, 900));
-        Flights f7 = new Flights(105, "Jeddah ", "16:00 pm", "5-1-1444", "Taif", "17:40 am", "5-1-1444");
+        Flights f7 = new Flights(105, "Jeddah ", "16:00 pm", "11/1/2025", "Taif", "17:40 am", "11/1/2025");
         f7.addTicket(new EconomyTicket("Economic", 350));
         f7.addTicket(new BusinessTicket("Business", 350, 600));
         f7.addTicket(new FirstClassTicket("FirstClass", 350, 900));
-        Flights f8 = new Flights(105, "Dammam ", "4:10 am", "7-1-1444", "Madinah", "6:55 am", "7-1-1444");
+        Flights f8 = new Flights(105, "Dammam ", "4:10 am", "14/1/2025", "Madinah", "6:55 am", "14/1/2025");
         f8.addTicket(new EconomyTicket("Economic", 530));
         f8.addTicket(new BusinessTicket("Business", 530, 600));
         f8.addTicket(new FirstClassTicket("FirstClass", 530, 900));
@@ -169,14 +169,16 @@ public class Flightbooking {
                                         if (seatLetter != 'C') {
                                             if (seatLetter != 'D') {
                                                 if (seatLetter != 'E') {
-                                                    System.out.println("Invalid! Please enter the correct seat: ");
+                                                    if (seatLetter !='F') {
+                                                        System.out.println("Invalid! Please enter the correct seat: ");
+                                                    }
                                                 }
                                             }
                                         }
                                     }
                                 }
                             } //continue to loop until the condition true
-                            while (seatNum < 0 || seatNum > 7 || seatLetter < 'A' || seatLetter > 'E');
+                            while (seatNum < 0 || seatNum > 7 || seatLetter < 'A' || seatLetter > 'F');
                             if (seatNum == 0) {
                                 flag = false;
                             } else {
