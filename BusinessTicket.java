@@ -22,9 +22,10 @@ private double additionalAmenitiesFees;
      * @param seatType
      * @param additionalAmenitiesFees
      */
-    public BusinessTicket(String SeatType,double additionalAmenitiesFees ){
+    public BusinessTicket(String SeatType, double basePrice, double additionalAmenitiesFees ){
     this.SeatType=SeatType;
     this.additionalAmenitiesFees = additionalAmenitiesFees;
+    setBasePrice(basePrice);
     }
    /** constructors BusinessTicket
      * @param NumID 
@@ -71,7 +72,7 @@ private double additionalAmenitiesFees;
      */
     @Override     
 public  ticket clone (ticket id ,Flights F){
- ticket t= new BusinessTicket(SeatType , additionalAmenitiesFees);
+ ticket t= new BusinessTicket(SeatType , getBasePrice(), additionalAmenitiesFees);
   t.DetailsF=F;
  t.NumID=(int)(Math.random()*(101));
  return t;
