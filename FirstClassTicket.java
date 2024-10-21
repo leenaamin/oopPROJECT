@@ -35,9 +35,10 @@ public class FirstClassTicket extends Ticket {
      * @param seatType
      * @param additionalAmenitiesFees
      */
-    public FirstClassTicket(String seatType, double additionalAmenitiesFees) {
+    public FirstClassTicket(String seatType, double basePrice, double additionalAmenitiesFees) {
         this.seatType = seatType;
         this.additionalAmenitiesFees = additionalAmenitiesFees;
+        setBasePrice(basePrice);
     }
     
      /**
@@ -105,7 +106,7 @@ public class FirstClassTicket extends Ticket {
      */
     @Override
     public Ticket clone(Ticket id, Flight f) {
-        Ticket t = new FirstClassTicket(seatType, additionalAmenitiesFees);
+        Ticket t = new FirstClassTicket(seatType, getBasePrice(), additionalAmenitiesFees);
         t.DetailsF = f;
         t.NumID = (int) (Math.random() * (101));
         return t;
