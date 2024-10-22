@@ -2,6 +2,7 @@
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Scanner;
 
 /**
  * /**class passenger contain all the info about the passenegrs like the name, age , gender , and passport number and compares the passport number in an equal method 
@@ -165,9 +166,13 @@ public class Passenger implements bookTicket {
      */
     @Override
     public double GetSeatPrice() {
-        double price = 0;
-        for (Ticket t : allTickets) {
-            price =price+ t.GetSeatPrice();
+        Scanner in= new Scanner(System.in);
+         double price ;
+            System.out.println("How many prices: ");
+            price = in.nextDouble();
+      
+        for (ticket t : allTickets) {
+            price =price* t.GetSeatPrice();
            
         }
         return price;
