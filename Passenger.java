@@ -11,7 +11,8 @@ import java.util.Scanner;
  * @author layan 
  */
 public class Passenger implements bookTicket {
-   
+       private double additionalAmenitiesFees;
+
     // passenegr first name 
    
     private  String FirstName;
