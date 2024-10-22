@@ -1,34 +1,50 @@
+package flightsbooking;
+
+/**
+ * The User class takes two variables of type String, one for the username and the other for the password
+ * and two constructors and parametraiz
+ * a Check method to ensures that the password contains the required number of digits and letters
+ * a toString method for printing tthe info
+ * @author leeno
+ */
 public class USER {
-     /**
+      /**
      *   username of User
      */
+    
+    
     public String username;
-
     /**
      * password of User
      */
-    public static String password;
     
+    
+    
+    public static String password;
     /**
      * default constructors User
      */
+    
+    
     public USER() {
     }
-    
     /**
      *constructors User
      * @param username 
      */
+    
+    
     public USER(String username) {
         this.username = username;
     }
-    
     /**
      * method Check password
      * @param password
      * @return false if length less than 8 
      * @return true if length equal 8
      */
+    
+    
     public boolean Check(String password) {
         if (password.length() < 8) {
             return false;
