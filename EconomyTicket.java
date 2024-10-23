@@ -75,7 +75,7 @@ public EconomyTicket(String SeatType,double Price ){
      */
     @Override
     public String toString() {
-        return  "SeatType is : " + SeatType +","+" Price: "+Price+" SR"+"\n*Wi-Fi  *Overhead TV  *Prayer Area *fresh meals \n Baggage Info: 1 Piece + 7 Kilos (Per Person)" ;
+        return  "SeatType is : " + SeatType +","+" Price: "+Price+" SR"+"\n*Wi-Fi  *Overhead TV  *Prayer Area *fresh meals \n Baggage Info: 1 Piece + 23 Kilos (Per Person)" ;
     }
 
     }
