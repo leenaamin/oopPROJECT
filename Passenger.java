@@ -1,11 +1,8 @@
-
-
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
-
 /**
- * /**class passenger contain all the info about the passenegrs like the name, age , gender , and passport number and compares the passport number in an equal method 
+ * /**class passenger contain all the info about the passenegers like the name, age , gender , and passport number and compares the passport number in an equal method 
  * it also implements the bookTicket by overriding the get seat price  
  *
  * @author layan 
@@ -28,6 +25,10 @@ public class Passenger implements bookTicket {
     // passenger age
     
     private int Age;
+    
+    // number of the seats that passenger booked
+    
+    private int numofseats;
     
      //Passenger PassportNum
     
@@ -138,6 +139,16 @@ public class Passenger implements bookTicket {
        
         this.Age = Age;
     }
+
+    public int getNumofseats() {
+        return numofseats;
+    }
+
+    public void setNumofseats(int numofeats) {
+        this.numofseats = numofseats;
+    }
+    
+    
 //        return PassportNum;
     /**
      * get the PassportNum  attribute 
@@ -160,23 +171,22 @@ public class Passenger implements bookTicket {
       public void reservTicket(Ticket t) {
         allTickets.add(t);
     }
+
+   public double calculateTotalPrice() {
+        double totalPrice = 0;
+        for (Ticket t : allTickets) {
+            totalPrice += t.GetSeatPrice();
+        }
+        return totalPrice;
+    }
 //implements BookTicket interface, overrides the method GetSeatPrice (return price) and adds a price for Ticket
       /**
      * GetSeatPrice method  
      * @return price of each Ticket 
      */
-    @Override
+     @Override
     public double GetSeatPrice() {
-        Scanner in= new Scanner(System.in);
-         double price ;
-            System.out.println("How many prices: ");
-            price = in.nextDouble();
-      
-        for (Ticket t : allTickets) {
-            price =price* t.GetSeatPrice();
-           
-        }
-        return price;
+        return calculateTotalPrice();
     }
       /**
      * NamegenString method  
@@ -216,8 +226,8 @@ public class Passenger implements bookTicket {
                 ", PassportNum: " + PassportNum +"\n";
                 for (Ticket t : allTickets) {
                     
-                    s+=t.DetailsFlight+"\n"+" NumID:"+ t.NumID+"\n" ;
-                    s+=t+"\n________________________________________________\n";
+                    s+=t.DetailsF+"\n"+" NumID:"+ t.NumID+"\n" ;
+                    s+=t+"\n__\n";
         }
                 s+= GetSeatPrice();
                 return s;
