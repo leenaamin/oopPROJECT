@@ -107,7 +107,7 @@ public boolean equals(Object obj)
     public String toString()
     {
         return (super.toString() + "\nSeat Type: " + seatType + "\nPrice: " + GetSeatPrice() + "SAR \nIt includes Wi-Fi, "
-                + "Overhead TV, Prayer Area, and Fresh meals \nBaggage Info: 1 piece luggage 7 kilos(Per Person)");
+                + "Overhead TV, Prayer Area, amenity kit, and Fresh meals \nBaggage Info: 2 piece luggage 32 kilos(Per Person)");
     }
     
 }
