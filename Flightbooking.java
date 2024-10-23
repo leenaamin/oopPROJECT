@@ -95,9 +95,9 @@ public class Flightbooking {
         Passenger p2 = new Passenger();
         int err = 0;
         //object From any subclass in the ticket to access the attribute to display the SeatNumber 
-        ticket passticketseat = new EconomyTicket();
-        ticket passticketseat1 = new FirstClassTicket();
-        ticket passticketseat2 = new BusinessTicket();
+        Ticket passticketseat = new EconomyTicket();
+        Ticket passticketseat1 = new FirstClassTicket();
+        Ticket passticketseat2 = new BusinessTicket();
         int choice = 0;
         while (choice != 10) {
             System.out.println("These options will be repeated for you several times to book more than one ticket\n (so choose a number each time)");
@@ -129,7 +129,7 @@ public class Flightbooking {
                         System.out.println("Please enter your Ticket\n1-Economic , 2-Business , 3-First");
                        //to choice from list
                         int ti = in.nextInt();
-                        ticket passticket = AllFlifht.get(fl - 1).getTicket(ti - 1);
+                        Ticket passticket = AllFlifht.get(fl - 1).getTicket(ti - 1);
                         int i, j, seatNum, c = 0;
                         char seatLetter = 'A';
                         int choice3 = 0;
