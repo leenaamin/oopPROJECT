@@ -5,7 +5,7 @@ package flightbooking;
  * All Implemented Interfaces:bookTicket 
  */
 
-public class BusinessTicket extends ticket {
+public class BusinessTicket extends Ticket {
      /**
      * attributs
      */
@@ -34,7 +34,7 @@ private double additionalAmenitiesFees;
      * @param seatType
      * @param additionalAmenitiesFees
      */
-    public BusinessTicket(int NumID, Flights DetailsF, Passenger DetailsP, String seatType, double additionalAmenitiesFees) {
+    public BusinessTicket(int NumID, Flight DetailsF, Passenger DetailsP, String seatType, double additionalAmenitiesFees) {
         super( NumID,DetailsF, DetailsP);
         this.seatType = seatType;
         this.additionalAmenitiesFees = additionalAmenitiesFees;
@@ -71,8 +71,8 @@ private double additionalAmenitiesFees;
      * @return t 
      */
     @Override     
-public  ticket clone (ticket id ,Flights F){
- ticket t= new BusinessTicket(SeatType , getBasePrice(), additionalAmenitiesFees);
+public  Ticket clone (Ticket id ,Flights F){
+ Ticket t= new BusinessTicket(SeatType , getBasePrice(), additionalAmenitiesFees);
   t.DetailsF=F;
  t.NumID=(int)(Math.random()*(101));
  return t;
