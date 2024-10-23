@@ -172,7 +172,7 @@ public class Passenger implements bookTicket {
             System.out.println("How many prices: ");
             price = in.nextDouble();
       
-        for (ticket t : allTickets) {
+        for (Ticket t : allTickets) {
             price =price* t.GetSeatPrice();
            
         }
