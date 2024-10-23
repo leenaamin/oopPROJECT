@@ -4,7 +4,7 @@
  *
  * @author Wehad
  */
-public class Flights {
+public class Flight {
       /**
     *Flight ID attribute of the flight number
     */ 
@@ -37,7 +37,7 @@ public class Flights {
     /**
      * Polymorphism  object - array of object( sub class EconomicTicket and BusinessTicket and FirstClassTicket)
      */
-        public ticket[] tickets = new ticket[3];
+        public Ticket[] tickets = new Ticket[3];
         
     /**
     * variable  in loop addTicket
@@ -47,7 +47,7 @@ public class Flights {
     /**
      * default constructor Flight
      */
-    public Flights() {
+    public Flight() {
 
     }
   /**
@@ -60,7 +60,7 @@ public class Flights {
      * @param ArrivalTime
      * @param ArrivalData
      */
-    public Flights(int FlightID, String Departure, String DepartureTime, String DepartureData, String Arrival, String ArrivalTime, String ArrivalData) {
+    public Flight(int FlightID, String Departure, String DepartureTime, String DepartureData, String Arrival, String ArrivalTime, String ArrivalData) {
         this.FlightID = FlightID;
         this.Departure = Departure;
         this.DepartureTime = DepartureTime;
@@ -191,7 +191,7 @@ public class Flights {
  * above in Ticket[] tickets = new Ticket[3]; Originally we have 3 subclass EconomicTicket and BusinessTicket and FirstClassTicket  So on every Flight we will add them
  * @param t   public Ticket[] tickets = new Ticket[3];
 */
-    public void addTicket(ticket t) {
+    public void addTicket(Ticket t) {
         if (num < 3) {
             tickets[num++] = t;
         }
@@ -223,7 +223,7 @@ public class Flights {
  */
     @Override
     public boolean equals(Object o){
-        Flights other = (Flights) o;
+        Flight other = (Flight) o;
         return this.FlightID == other.FlightID;
     }
     
