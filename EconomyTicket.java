@@ -1,4 +1,3 @@
-package flightbooking;
 
 /**
  @author leeno
@@ -7,11 +6,11 @@ public class EconomyTicket extends Ticket {
      /**
       SeatType attribute of EconomyTicket class
      */
- public String SeatType;
+ private String SeatType;
     /**
       Price  attribute of EconomyTicket calss
      */
- public double Price;
+ private double Price;
      /**
       default constructors for EconomyTicket class
      */
@@ -37,6 +36,22 @@ public EconomyTicket(String SeatType,double Price ){
     public EconomyTicket ( int NumID, Flight DetailsFlight, Passenger PassengDetails) {
         super(NumID ,DetailsFlight, PassengDetails);
     }
+
+    public String getSeatType() {
+        return SeatType;
+    }
+
+    public void setSeatType(String SeatType) {
+        this.SeatType = SeatType;
+    }
+
+    public double getPrice() {
+        return Price;
+    }
+
+    public void setPrice(double Price) {
+        this.Price = Price;
+    }
   
 
   
@@ -60,9 +75,9 @@ public EconomyTicket(String SeatType,double Price ){
      * @return t 
      */
  @Override
- public  ticket clone (Ticket id ,Flight F){
+ public  Ticket clone (Ticket id ,Flight F){
  Ticket t= new EconomyTicket(SeatType , Price);
- t.FlightsDetails=F;
+ t.DetailsF=F;
  t.NumID= (int)(Math.random()*(101));
  return t;
  }
@@ -79,6 +94,3 @@ public EconomyTicket(String SeatType,double Price ){
     }
 
     }
-    
-
-
