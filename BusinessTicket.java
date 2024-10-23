@@ -1,4 +1,4 @@
-package flightbooking;
+
 /**
  *@author wajn
  * BusinessTicket inheritance from ticket its subclass 
@@ -36,7 +36,7 @@ private double additionalAmenitiesFees;
      */
     public BusinessTicket(int NumID, Flight DetailsF, Passenger DetailsP, String seatType, double additionalAmenitiesFees) {
         super( NumID,DetailsF, DetailsP);
-        this.seatType = seatType;
+        this.SeatType = seatType;
         this.additionalAmenitiesFees = additionalAmenitiesFees;
     } 
       /**
@@ -71,7 +71,7 @@ private double additionalAmenitiesFees;
      * @return t 
      */
     @Override     
-public  Ticket clone (Ticket id ,Flights F){
+public  Ticket clone (Ticket id ,Flight F){
  Ticket t= new BusinessTicket(SeatType , getBasePrice(), additionalAmenitiesFees);
   t.DetailsF=F;
  t.NumID=(int)(Math.random()*(101));
@@ -94,7 +94,7 @@ public boolean equals(Object obj)
     BusinessTicket other = (BusinessTicket) obj;
     
     
-    return (this.seatType.equals(other.seatType) &&
+    return (this.SeatType.equals(other.SeatType) &&
            this.additionalAmenitiesFees == other.additionalAmenitiesFees);
     
 }
@@ -106,7 +106,7 @@ public boolean equals(Object obj)
     @Override 
     public String toString()
     {
-        return (super.toString() + "\nSeat Type: " + seatType + "\nPrice: " + GetSeatPrice() + "SAR \nIt includes Wi-Fi, "
+        return (super.toString() + "\nSeat Type: " + SeatType + "\nPrice: " + GetSeatPrice() + "SAR \nIt includes Wi-Fi, "
                 + "Overhead TV, Prayer Area, amenity kit, and Fresh meals \nBaggage Info: 2 piece luggage 32 kilos(Per Person)");
     }
     
