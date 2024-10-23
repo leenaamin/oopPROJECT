@@ -107,8 +107,8 @@ public class FirstClassTicket extends Ticket {
     @Override
     public Ticket clone(Ticket id, Flight f) {
         Ticket t = new FirstClassTicket(seatType, getBasePrice(), additionalAmenitiesFees);
-        t.DetailsF = f;
-        t.NumID = (int) (Math.random() * (101));
+        setDetailsF(f);
+        setNumID((int) (Math.random() * (101)));
         return t;
     }
   
