@@ -1,19 +1,29 @@
-package com.mycompany.flightbooking;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- *
- * @author joojo
+ Members: 
+leader: Ghada
+ Student ID:
+-Wehad AlWuthaynani
+Student ID:
+-Mayar
+Student ID:
+-Layan
+Student ID:
+-Wajn
+Student ID:
+-Lena
+Student ID:
  */
 public class Flightbooking {
  // Name of Infinty company  
     public static String Name;    
-    //    Address of Infinty company  
+    //    Address of our company  
     public static String Address;
-//    phone of Infinty company  
+//    phone of our company  
     public static int phone;
 //   AllFlifht is ArrayList of Flight
     public static ArrayList<Flight> AllFlifht;
@@ -321,4 +331,3 @@ public class Flightbooking {
         }
     }
 }
-    
