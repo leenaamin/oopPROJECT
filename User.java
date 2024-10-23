@@ -77,7 +77,7 @@ public class User {
         }
 //       
         if ((charCount >= 2 && numCount >= 2)) {
-            USER.password = password;
+            User.password = password;
             return true;
         }
         return false;
