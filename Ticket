@@ -1,18 +1,20 @@
-package flightbooking;
+
 
 /**
  *
  * @author Ghada
  */
 public abstract class Ticket implements bookTicket {
-    //    Random Ticket number for each flight
-
-    
+   
      /**
      * The Base Price of the seat
      */
-        protected double basePrice = 0;
-        protected double totalPrice = 0; 
+        protected double basePrice ;
+        
+        /**
+     * The Total Price of All Tickets
+     */
+        protected double totalPrice ; 
         
     /**
      * The number of passenger's ID
@@ -29,6 +31,11 @@ public abstract class Ticket implements bookTicket {
      */
       protected Passenger DetailsP;
 
+      /*  
+      
+      public setter and getter for every attribute 
+      
+      */
          public int getNumID() {
         return NumID;
     }
@@ -61,6 +68,14 @@ public abstract class Ticket implements bookTicket {
         this.basePrice = basePrice;
     }
 
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+ 
    
 
     /**
@@ -81,16 +96,6 @@ public abstract class Ticket implements bookTicket {
      */
     public char[][] SeatNumber = new char[Row][Col];
 
- 
-    public char[][] getSeatNumber() {
-        return SeatNumber;
-    }
-
-    public void setSeatNumber(char[][] SeatNumber) {
-        this.SeatNumber = SeatNumber;
-    }
-
-    
    
     
     /**
@@ -127,7 +132,7 @@ it will not affect the other copies, it is supposed to take a separate copy of i
      */
     @Override
     public String toString() {
-        return " ID Number : "+NumID ;
+        return " ID Number : "+ NumID ;
     }
     /**
      * method equals override 
@@ -141,7 +146,5 @@ it will not affect the other copies, it is supposed to take a separate copy of i
         
         return this.NumID == other.NumID;
     }
-    
-}
     
 }
