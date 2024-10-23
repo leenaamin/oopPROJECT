@@ -7,7 +7,7 @@ package flightsbooking;
  * a toString method for printing tthe info
  * @author leeno
  */
-public class USER {
+public class User {
       /**
      *   username of User
      */
@@ -26,7 +26,7 @@ public class USER {
      */
     
     
-    public USER() {
+    public User() {
     }
     /**
      *constructors User
@@ -34,7 +34,7 @@ public class USER {
      */
     
     
-    public USER(String username) {
+    public User(String username) {
         this.username = username;
     }
     /**
