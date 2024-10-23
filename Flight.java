@@ -201,7 +201,7 @@ public class Flight {
   * @param i 
   * @return tickets
   */
-    public ticket getTicket(int i) {
+    public Ticket getTicket(int i) {
         return tickets[i];
     }
 
