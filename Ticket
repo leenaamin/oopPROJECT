@@ -5,27 +5,29 @@ package flightbooking;
  * @author Ghada
  */
 public abstract class Ticket implements bookTicket {
-    //    Random ticket number for each flight
+    //    Random Ticket number for each flight
 
     
      /**
      * The Base Price of the seat
      */
-        private double basePrice = 0;
+        protected double basePrice = 0;
+        protected double totalPrice = 0; 
+        
     /**
      * The number of passenger's ID
      */
-        private int NumID;
+        protected int NumID;
 
     /**
      * An object from class Flight for flight details 
      */
-       private Flight DetailsF;
+       protected Flight DetailsF;
 
     /**
      *An object from class Passenger for passenger details
      */
-      private Passenger DetailsP;
+      protected Passenger DetailsP;
 
          public int getNumID() {
         return NumID;
@@ -65,7 +67,7 @@ public abstract class Ticket implements bookTicket {
      * Number of row for seats 
      */
   
-    public static final int Row = 10;
+    public static final int Row = 9;
 
     /**
      *Number of column for seats 
@@ -77,7 +79,7 @@ public abstract class Ticket implements bookTicket {
      * It won't be booked in the system 
      * It will come at the time of boarding in the main
      */
-    private char[][] SeatNumber = new char[Row][Col];
+    public char[][] SeatNumber = new char[Row][Col];
 
  
     public char[][] getSeatNumber() {
@@ -89,7 +91,7 @@ public abstract class Ticket implements bookTicket {
     }
 
     
-    
+   
     
     /**
      *default constructor Ticket
@@ -110,8 +112,8 @@ public abstract class Ticket implements bookTicket {
     }
 
     /**
-     *this method will clone the ticket inside the flight, we will give each passenger a copy, and the passenger will change the ticket info
-     *it will not affect the other copies, it is supposed to take a separate copy of it (create a new object of the same type,but it will be different for each passenger)
+     *this method will clone the Ticket inside the flight, we will give each passenger a copy, and the passenger will change the Ticket info
+it will not affect the other copies, it is supposed to take a separate copy of it (create a new object of the same type,but it will be different for each passenger)
      * @param id
      * @param f
      * @return
@@ -139,5 +141,7 @@ public abstract class Ticket implements bookTicket {
         
         return this.NumID == other.NumID;
     }
+    
+}
     
 }
