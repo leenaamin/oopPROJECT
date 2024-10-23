@@ -4,7 +4,7 @@ package flightbooking;
  *
  * @author Ghada
  */
-public abstract class ticket implements bookTicket {
+public abstract class Ticket implements bookTicket {
     //    Random ticket number for each flight
 
     
@@ -20,7 +20,7 @@ public abstract class ticket implements bookTicket {
     /**
      * An object from class Flight for flight details 
      */
-       private Flights DetailsF;
+       private Flight DetailsF;
 
     /**
      *An object from class Passenger for passenger details
@@ -35,11 +35,11 @@ public abstract class ticket implements bookTicket {
         this.NumID = NumID;
     }
 
-    public Flights getDetailsF() {
+    public Flight getDetailsF() {
         return DetailsF;
     }
 
-    public void setDetailsF(Flights DetailsF) {
+    public void setDetailsF(Flight DetailsF) {
         this.DetailsF = DetailsF;
     }
 
@@ -94,7 +94,7 @@ public abstract class ticket implements bookTicket {
     /**
      *default constructor Ticket
      */
-    public ticket(){
+    public Ticket(){
 }
 
     /**
@@ -103,7 +103,7 @@ public abstract class ticket implements bookTicket {
      * @param DetailsF
      * @param DetailsP
      */
-    public ticket( int NumID,Flights DetailsF, Passenger DetailsP) {
+    public Ticket( int NumID,Flight DetailsF, Passenger DetailsP) {
         this.NumID = (int)(Math.random()*(101));
         this.DetailsF = DetailsF;
         this.DetailsP = DetailsP;
@@ -117,7 +117,7 @@ public abstract class ticket implements bookTicket {
      * @return
      */
     
-    public abstract ticket clone (ticket id ,Flights f);
+    public abstract Ticket clone (Ticket id ,Flight f);
 
      /**
      * method toString Override    
@@ -135,7 +135,7 @@ public abstract class ticket implements bookTicket {
      */
     @Override
     public boolean equals(Object obj) {
-        ticket other = (ticket) obj;
+        Ticket other = (Ticket) obj;
         
         return this.NumID == other.NumID;
     }
