@@ -3,7 +3,7 @@ package flightbooking;
 /**
  @author leeno
  */
-public class EconomyTicket extends ticket {
+public class EconomyTicket extends Ticket {
      /**
       SeatType attribute of EconomyTicket class
      */
@@ -34,7 +34,7 @@ public EconomyTicket(String SeatType,double Price ){
       @param DetailsFlight 
       @param PassengDetails
      */
-    public EconomyTicket ( int NumID, Flights DetailsFlight, Passenger PassengDetails) {
+    public EconomyTicket ( int NumID, Flight DetailsFlight, Passenger PassengDetails) {
         super(NumID ,DetailsFlight, PassengDetails);
     }
   
@@ -60,8 +60,8 @@ public EconomyTicket(String SeatType,double Price ){
      * @return t 
      */
  @Override
- public  ticket clone (ticket id ,Flights F){
- ticket t= new EconomyTicket(SeatType , Price);
+ public  ticket clone (Ticket id ,Flight F){
+ Ticket t= new EconomyTicket(SeatType , Price);
  t.FlightsDetails=F;
  t.NumID= (int)(Math.random()*(101));
  return t;
