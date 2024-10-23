@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  Members: 
-leader: Ghada
+leader: Ghada Alotibi
  Student ID:
 -Wehad AlWuthaynani
 Student ID:
@@ -30,35 +30,35 @@ public class Flightbooking {
  
     public static void main(String[] args) {
         AllFlifht = new ArrayList<Flight>();
-        Flight f = new Flight(101, "Jeddah ", "1:20 am", "5/1/2025", "Riyadh", "3:10 am", "5/1/2025");
+        Flight f = new Flight(101, "Jeddah ", "1:20 am", "5/1/2025", "Cairo", "3:10 am", "5/1/2025");
         f.addTicket(new EconomyTicket("Economic", 450));
         f.addTicket(new BusinessTicket("Business", 450, 600));
         f.addTicket(new FirstClassTicket("FirstClass", 450, 900));
-        Flight f2 = new Flight(102, "Jeddah ", "1:30 am", "7/1/2025", "Riyadh", "3:50 am", "7/1/2025");
+        Flight f2 = new Flight(102, "Riyadh ", "1:30 am", "7/1/2025", "Dubai", "3:50 am", "7/1/2025");
         f2.addTicket(new EconomyTicket("Economic", 300));
         f2.addTicket(new BusinessTicket("Business", 300, 600));
         f2.addTicket(new FirstClassTicket("FirstClass", 300, 900));
-        Flight f3 = new Flight(103, "Riyadh ", "15:00 pm", "7/1/2025", "Jeddah", "16:55 pm", "7/1/2025");
+        Flight f3 = new Flight(103, "Washinghton DC ", "15:00 pm", "7/1/2025", "New York", "19:40 pm", "7/1/2025");
         f3.addTicket(new EconomyTicket("Economic", 320));
         f3.addTicket(new BusinessTicket("Business", 320, 600));
         f3.addTicket(new FirstClassTicket("FirstClass", 320, 900));
-        Flight f4 = new Flight(104, "Riyadh ", "10:50 am", "8/1/2025", "Jeddah", "12:40 am", "8/1/2025");
+        Flight f4 = new Flight(104, "Moscow ", "00:50 am", "8/1/2025", "London", "7:20 am", "9/1/2025");
         f4.addTicket(new EconomyTicket("Economic", 520));
         f4.addTicket(new BusinessTicket("Business", 520, 600));
         f4.addTicket(new FirstClassTicket("FirstClass", 520, 900));
-        Flight f5 = new Flight(105, "Taif ", "4:00 am", "8/1/2025", "Jeddah", "5:40 am", "8/1/2025");
+        Flight f5 = new Flight(105, "Paris ", "4:00 am", "8/1/2025", "Geneva", "10:40 am", "8/1/2025");
         f5.addTicket(new EconomyTicket("Economic", 310));
         f5.addTicket(new BusinessTicket("Business", 310, 600));
         f5.addTicket(new FirstClassTicket("FirstClass", 310, 900));
-        Flight f6 = new Flight(106, "Madinah ", "4:10 am", "11/1/2025", "Dammam", "6:55 am", "11/1/2025");
+        Flight f6 = new Flight(106, "Rome ", "4:10 am", "11/1/2025", "Barcelona", "6:05 am", "11/1/2025");
         f6.addTicket(new EconomyTicket("Economic", 430));
         f6.addTicket(new BusinessTicket("Business", 430, 600));
         f6.addTicket(new FirstClassTicket("FirstClass", 430, 900));
-        Flight f7 = new Flight(107, "Jeddah ", "16:00 pm", "11/1/2025", "Taif", "17:40 am", "11/1/2025");
+        Flight f7 = new Flight(107, "Jeddah ", "16:00 pm", "11/1/2025", "Istanbul", "19:55 am", "11/1/2025");
         f7.addTicket(new EconomyTicket("Economic", 350));
         f7.addTicket(new BusinessTicket("Business", 350, 600));
         f7.addTicket(new FirstClassTicket("FirstClass", 350, 900));
-        Flight f8 = new Flight(108, "Dammam ", "4:10 am", "14/1/2025", "Madinah", "6:55 am", "14/1/2025");
+        Flight f8 = new Flight(108, "Dammam ", "4:10 am", "14/1/2025", "Abu Dhabi", "6:55 am", "14/1/2025");
         f8.addTicket(new EconomyTicket("Economic", 530));
         f8.addTicket(new BusinessTicket("Business", 530, 600));
         f8.addTicket(new FirstClassTicket("FirstClass", 530, 900));
