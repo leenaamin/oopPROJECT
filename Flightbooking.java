@@ -16,39 +16,39 @@ public class Flightbooking {
 //    phone of Infinty company  
     public static int phone;
 //   AllFlifht is ArrayList of Flight
-    public static ArrayList<Flights> AllFlifht;
+    public static ArrayList<Flight> AllFlifht;
  
     public static void main(String[] args) {
-        AllFlifht = new ArrayList<Flights>();
-        Flights f = new Flights(101, "Jeddah ", "1:20 am", "5/1/2025", "Riyadh", "3:10 am", "5/1/2025");
+        AllFlifht = new ArrayList<Flight>();
+        Flight f = new Flight(101, "Jeddah ", "1:20 am", "5/1/2025", "Riyadh", "3:10 am", "5/1/2025");
         f.addTicket(new EconomyTicket("Economic", 450));
         f.addTicket(new BusinessTicket("Business", 450, 600));
         f.addTicket(new FirstClassTicket("FirstClass", 450, 900));
-        Flights f2 = new Flights(102, "Jeddah ", "1:30 am", "7/1/2025", "Riyadh", "3:50 am", "7/1/2025");
+        Flight f2 = new Flight(102, "Jeddah ", "1:30 am", "7/1/2025", "Riyadh", "3:50 am", "7/1/2025");
         f2.addTicket(new EconomyTicket("Economic", 300));
         f2.addTicket(new BusinessTicket("Business", 300, 600));
         f2.addTicket(new FirstClassTicket("FirstClass", 300, 900));
-        Flights f3 = new Flights(103, "Riyadh ", "15:00 pm", "7/1/2025", "Jeddah", "16:55 pm", "7/1/2025");
+        Flight f3 = new Flight(103, "Riyadh ", "15:00 pm", "7/1/2025", "Jeddah", "16:55 pm", "7/1/2025");
         f3.addTicket(new EconomyTicket("Economic", 320));
         f3.addTicket(new BusinessTicket("Business", 320, 600));
         f3.addTicket(new FirstClassTicket("FirstClass", 320, 900));
-        Flights f4 = new Flights(104, "Riyadh ", "10:50 am", "8/1/2025", "Jeddah", "12:40 am", "8/1/2025");
+        Flight f4 = new Flight(104, "Riyadh ", "10:50 am", "8/1/2025", "Jeddah", "12:40 am", "8/1/2025");
         f4.addTicket(new EconomyTicket("Economic", 520));
         f4.addTicket(new BusinessTicket("Business", 520, 600));
         f4.addTicket(new FirstClassTicket("FirstClass", 520, 900));
-        Flights f5 = new Flights(105, "Taif ", "4:00 am", "8/1/2025", "Jeddah", "5:40 am", "8/1/2025");
+        Flight f5 = new Flight(105, "Taif ", "4:00 am", "8/1/2025", "Jeddah", "5:40 am", "8/1/2025");
         f5.addTicket(new EconomyTicket("Economic", 310));
         f5.addTicket(new BusinessTicket("Business", 310, 600));
         f5.addTicket(new FirstClassTicket("FirstClass", 310, 900));
-        Flights f6 = new Flights(106, "Madinah ", "4:10 am", "11/1/2025", "Dammam", "6:55 am", "11/1/2025");
+        Flight f6 = new Flight(106, "Madinah ", "4:10 am", "11/1/2025", "Dammam", "6:55 am", "11/1/2025");
         f6.addTicket(new EconomyTicket("Economic", 430));
         f6.addTicket(new BusinessTicket("Business", 430, 600));
         f6.addTicket(new FirstClassTicket("FirstClass", 430, 900));
-        Flights f7 = new Flights(107, "Jeddah ", "16:00 pm", "11/1/2025", "Taif", "17:40 am", "11/1/2025");
+        Flight f7 = new Flight(107, "Jeddah ", "16:00 pm", "11/1/2025", "Taif", "17:40 am", "11/1/2025");
         f7.addTicket(new EconomyTicket("Economic", 350));
         f7.addTicket(new BusinessTicket("Business", 350, 600));
         f7.addTicket(new FirstClassTicket("FirstClass", 350, 900));
-        Flights f8 = new Flights(108, "Dammam ", "4:10 am", "14/1/2025", "Madinah", "6:55 am", "14/1/2025");
+        Flight f8 = new Flight(108, "Dammam ", "4:10 am", "14/1/2025", "Madinah", "6:55 am", "14/1/2025");
         f8.addTicket(new EconomyTicket("Economic", 530));
         f8.addTicket(new BusinessTicket("Business", 530, 600));
         f8.addTicket(new FirstClassTicket("FirstClass", 530, 900));
@@ -76,7 +76,7 @@ public class Flightbooking {
         System.out.println("Enter user");
         String uu = in.nextLine();
         //object from User class
-        USER u = new USER();
+        User u = new User();
         //whlie loop if user inpout incrrect password  
         while (u.Check(pass) != true) {
             System.out.println("Not a valid password: " + pass);
@@ -109,7 +109,7 @@ public class Flightbooking {
             //to choice from list
             choice = in.nextInt();}
                      catch ( InputMismatchException e) {
-                        System.out.println("InputMismatchException PLEASE just number not string");
+                        System.out.println("InputMismatchException PLEASE type just a number not a string");
                         in.nextLine();
                         err++;
                     }
@@ -234,7 +234,7 @@ public class Flightbooking {
                             p2.Num++;
                         }
                         System.out.println("________________");
-                        System.out.println("Enter your Age ( please write as integar and Must be 18 or over) ");
+                        System.out.println("Enter your Age ( please write it as an integar and it Must be 18 or over) ");
                        int Age = in.nextInt();
                        //condition for Age 
                         if (Age >= 18) {
@@ -262,11 +262,11 @@ public class Flightbooking {
                         in.nextLine();
                         err++;
                     } catch (NumberFormatException e) {
-                        System.out.println("NumberFormatException PLEASE just String not number");
+                        System.out.println("NumberFormatException PLEASE type just a String not a number");
                         in.nextLine();
                         err++;
                     } catch (InputMismatchException e) {
-                        System.out.println("InputMismatchException PLEASE just number not string");
+                        System.out.println("InputMismatchException PLEASE type just a number not a string");
                         in.nextLine();
                         err++;
                     }
@@ -314,7 +314,7 @@ public class Flightbooking {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("invalide");
+                    System.out.println("invalid");
                     
                     
             }
