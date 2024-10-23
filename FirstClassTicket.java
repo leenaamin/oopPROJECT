@@ -33,6 +33,7 @@ public class FirstClassTicket extends Ticket {
     /**
      * Parameterized constructor
      * @param seatType
+     * @param basePrice
      * @param additionalAmenitiesFees
      */
     public FirstClassTicket(String seatType, double basePrice, double additionalAmenitiesFees) {
