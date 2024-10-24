@@ -1,10 +1,9 @@
-package flightbooking;
-
 /**
  *The EconomyTicket class extends a Ticket class ,EconomyTicket class have  one Attribute of the type String for the seat type,one Attribute of the type double for the price
  * two constructors a defult one and a parametriz one 
  * a GetSeatPrice method to return the seat price 
  * a clone method for EconomyTicket object assigns it a random ID and associates it with the provided Flights object
+ * a toString method
  * @author leeno
  */
 public class EconomyTicket extends Ticket {
@@ -38,7 +37,7 @@ public EconomyTicket(String SeatType,double Price ){
       @param DetailsFlight 
       @param PassengDetails
      */
-    public EconomyTicket ( int NumID, Flights DetailsFlight, Passenger PassengDetails) {
+    public EconomyTicket ( int NumID, Flight DetailsFlight, Passenger PassengDetails) {
         super(NumID ,DetailsFlight, PassengDetails);
     }
   
@@ -64,7 +63,7 @@ public EconomyTicket(String SeatType,double Price ){
      * @return t 
      */
  @Override
- public  Ticket clone (Ticket id ,Flights F){
+ public  Ticket clone (Ticket id ,Flight F){
  Ticket t= new EconomyTicket(SeatType , Price);
  t.DetailsF=F;
  t.NumID= (int)(Math.random()*(101));
