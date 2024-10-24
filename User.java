@@ -1,50 +1,41 @@
-package flightsbooking;
-
 /**
- * The User class takes two variables of type String, one for the username and the other for the password
+ * The User class extends the Ticket class, have two Attributes of type String, one for the username and the other for the password
  * and two constructors and parametraiz
  * a Check method to ensures that the password contains the required number of digits and letters
  * a toString method for printing tthe info
  * @author leeno
  */
-public class User {
+public class User{
       /**
      *   username of User
      */
-    
-    
     public String username;
+
     /**
      * password of User
      */
-    
-    
-    
     public static String password;
+    
     /**
      * default constructors User
      */
-    
-    
     public User() {
     }
+    
     /**
      *constructors User
      * @param username 
      */
-    
-    
     public User(String username) {
         this.username = username;
     }
+    
     /**
      * method Check password
      * @param password
      * @return false if length less than 8 
      * @return true if length equal 8
      */
-    
-    
     public boolean Check(String password) {
         if (password.length() < 8) {
             return false;
@@ -77,7 +68,7 @@ public class User {
         }
 //       
         if ((charCount >= 2 && numCount >= 2)) {
-            User.password = password;
+            USER.password = password;
             return true;
         }
         return false;
@@ -104,10 +95,3 @@ public class User {
         return "username:" + username + "password:" + password;
     }
 }
-    
-    
-
-
-
-    
-
