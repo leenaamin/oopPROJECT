@@ -15,8 +15,8 @@ Student ID:
 Student ID: 44511056
 -Wajn
 Student ID:
--Lena
-Student ID:
+-Leena
+Student ID:44510682
  */
 public class Flightbooking {
  // Name of Infinty company  
