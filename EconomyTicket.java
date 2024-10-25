@@ -10,11 +10,11 @@ public class EconomyTicket extends Ticket {
      /**
       SeatType attribute of EconomyTicket class
      */
- public String SeatType;
+ private String SeatType;
     /**
-      Price  attribute of EconomyTicket calss
+      Price  attribute of EconomyTicket class
      */
- public double Price;
+ private double Price;
      /**
       default constructors for EconomyTicket class
      */
@@ -23,22 +23,41 @@ public class EconomyTicket extends Ticket {
 }
   
     /**
+     * @param NumID
+     * @param SeatType
       @param Price 
      */
-public EconomyTicket(String SeatType,double Price ){
+public EconomyTicket(int NumID, String SeatType,double Price ){
+    this.NumID = NumID ;
     this.SeatType="Economy";
     this.Price=Price;
  }
 
   
   
-  /** constructors for EconomyTicket calss
+  /** constructors for EconomyTicket class
       @param NumID 
       @param DetailsFlight 
       @param PassengDetails
      */
     public EconomyTicket ( int NumID, Flight DetailsFlight, Passenger PassengDetails) {
         super(NumID ,DetailsFlight, PassengDetails);
+    }
+
+    public String getSeatType() {
+        return SeatType;
+    }
+
+    public void setSeatType(String SeatType) {
+        this.SeatType = SeatType;
+    }
+
+    public double getPrice() {
+        return Price;
+    }
+
+    public void setPrice(double Price) {
+        this.Price = Price;
     }
   
 
@@ -64,9 +83,9 @@ public EconomyTicket(String SeatType,double Price ){
      */
  @Override
  public  Ticket clone (Ticket id ,Flight F){
- Ticket t= new EconomyTicket(SeatType , Price);
- t.DetailsF=F;
- t.NumID= (int)(Math.random()*(101));
+  Ticket t= new EconomyTicket(NumID, SeatType , Price);
+  t.DetailsF=F;
+  t.NumID = NumID ;
  return t;
  }
  
@@ -78,7 +97,7 @@ public EconomyTicket(String SeatType,double Price ){
      */
     @Override
     public String toString() {
-        return  "SeatType is : " + SeatType +","+" Price: "+Price+" SR"+"\n*Wi-Fi  *Overhead TV  *Prayer Area *fresh meals \n Baggage Info: 1 Piece + 7 Kilos (Per Person)" ;
+        return super.toString() +  "\nSeatType is : " + SeatType +","+" Price: "+Price+" SR"+"\n*Wi-Fi  *Overhead TV  *Prayer Area *fresh meals \n Baggage Info: 1 Piece + 23 Kilos (Per Person)" ;
     }
 
     }
