@@ -28,6 +28,7 @@ public class FirstClassTicket extends Ticket {
      * Parameterized constructor
      * @param NumID
      * @param seatType
+     * @param basePrice
      * @param additionalAmenitiesFees
      */
     public FirstClassTicket(int NumID ,String seatType, double basePrice, double additionalAmenitiesFees) {
