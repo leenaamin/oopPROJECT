@@ -7,7 +7,7 @@
 
 public class BusinessTicket extends Ticket {
      /**
-     * attributs
+     * attributes
      */
 private String SeatType;
 private double additionalAmenitiesFees;
@@ -19,10 +19,11 @@ private double additionalAmenitiesFees;
     }
        /**
      * Parameterized constructor
-     * @param seatType
+     * @param SeatType
      * @param additionalAmenitiesFees
      */
-    public BusinessTicket(String SeatType, double basePrice, double additionalAmenitiesFees ){
+    public BusinessTicket(int NumID ,String SeatType, double basePrice, double additionalAmenitiesFees ){
+    this.NumID = NumID ;
     this.SeatType=SeatType;
     this.additionalAmenitiesFees = additionalAmenitiesFees;
     setBasePrice(basePrice);
@@ -72,9 +73,9 @@ private double additionalAmenitiesFees;
      */
     @Override     
 public  Ticket clone (Ticket id ,Flight F){
- Ticket t= new BusinessTicket(SeatType , getBasePrice(), additionalAmenitiesFees);
+ Ticket t= new BusinessTicket(NumID, SeatType , getBasePrice(), additionalAmenitiesFees);
   t.DetailsF=F;
- t.NumID=(int)(Math.random()*(101));
+ t.NumID = NumID ;
  return t;
  }
  /**
