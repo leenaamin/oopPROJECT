@@ -254,10 +254,10 @@ public class Flightbooking {
                             p2.Num++;
                         }
                         System.out.println("________________");
-             System.out.println("Enter your ID number or Residency number ( Ex: 111586789876  ,It must include 10 numbers)");
+             System.out.println("Enter your Passport Number ( Ex: SZ557907  ,It must include 8 numbers)");
                     String Passportnumber = in.next();
                     //conditin for Passportnumber 
-                        if ( (Passportnumber.length()!= 10)&&(Passenger.namegenString(Name)==true) ) {
+                        if ( (Passportnumber.length()!= 8)&&(Passenger.namegenString(Name)==true) ) {
                             System.out.println("incorrect");
                             p2.Num++;
                         } else {
