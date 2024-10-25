@@ -111,7 +111,7 @@ public abstract class Ticket implements bookTicket {
      * @param DetailsP
      */
     public Ticket( int NumID,Flight DetailsF, Passenger DetailsP) {
-        this.NumID = (int)(Math.random()*(101));
+        this.NumID = NumID ;
         this.DetailsF = DetailsF;
         this.DetailsP = DetailsP;
     }
@@ -132,7 +132,7 @@ it will not affect the other copies, it is supposed to take a separate copy of i
      */
     @Override
     public String toString() {
-        return " ID Number : "+ NumID ;
+        return " Ticket ID Number : "+ NumID ;
     }
     /**
      * method equals override 
