@@ -10,7 +10,7 @@ leader: Ghada Alotibi
 -Wehad AlWuthaynani
 Student ID:
 -Mayar
-Student ID:
+Student ID: 445003256
 -Layan saleh
 Student ID: 44511056
 -Wajn
@@ -116,7 +116,7 @@ public class Flightbooking {
             //exception 
             try{
            
-            System.out.println("1- Reserve flight\n2-Calculate total price\n3-Print ticket \n4-payment\n5- Exit");
+            System.out.println("1- Reserve flight\n2- Calculate total price\n3- Print ticket \n4- Payment\n5- Exit");
             System.out.println("________");
             //to choice from list
             choice = in.nextInt();}
@@ -138,7 +138,7 @@ public class Flightbooking {
                         int fl = in.nextInt();
                         AllFlifht.get(fl - 1).displayticket();
 
-                        System.out.println("Please enter your Ticket\n1-Economic , 2-Business , 3-First");
+                        System.out.println("Please enter your Ticket\n1-Economy , 2-Business , 3-First");
                        //to choice from list
                         int ti = in.nextInt();
                         Ticket passticket = AllFlifht.get(fl - 1).getTicket(ti - 1);
