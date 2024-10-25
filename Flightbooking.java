@@ -31,37 +31,37 @@ public class Flightbooking {
     public static void main(String[] args) {
         AllFlifht = new ArrayList<Flight>();
         Flight f = new Flight(101, "Jeddah ", "1:20 am", "5/1/2025", "Cairo", "3:10 am", "5/1/2025");
-        f.addTicket(new EconomyTicket("Economic", 450));
-        f.addTicket(new BusinessTicket("Business", 450, 600));
-        f.addTicket(new FirstClassTicket("FirstClass", 450, 900));
+        f.addTicket(new EconomyTicket(100,"Economic", 450));
+        f.addTicket(new BusinessTicket(110,"Business", 450, 600));
+        f.addTicket(new FirstClassTicket(101,"FirstClass", 450, 900));
         Flight f2 = new Flight(102, "Riyadh ", "1:30 am", "7/1/2025", "Dubai", "3:50 am", "7/1/2025");
-        f2.addTicket(new EconomyTicket("Economic", 300));
-        f2.addTicket(new BusinessTicket("Business", 300, 600));
-        f2.addTicket(new FirstClassTicket("FirstClass", 300, 900));
+        f2.addTicket(new EconomyTicket(200,"Economic", 300));
+        f2.addTicket(new BusinessTicket(220,"Business", 300, 600));
+        f2.addTicket(new FirstClassTicket(202,"FirstClass", 300, 900));
         Flight f3 = new Flight(103, "Washinghton DC ", "15:00 pm", "7/1/2025", "New York", "19:40 pm", "7/1/2025");
-        f3.addTicket(new EconomyTicket("Economic", 320));
-        f3.addTicket(new BusinessTicket("Business", 320, 600));
-        f3.addTicket(new FirstClassTicket("FirstClass", 320, 900));
+        f3.addTicket(new EconomyTicket(300,"Economic", 320));
+        f3.addTicket(new BusinessTicket(330,"Business", 320, 600));
+        f3.addTicket(new FirstClassTicket(303,"FirstClass", 320, 900));
         Flight f4 = new Flight(104, "Moscow ", "00:50 am", "8/1/2025", "London", "7:20 am", "9/1/2025");
-        f4.addTicket(new EconomyTicket("Economic", 520));
-        f4.addTicket(new BusinessTicket("Business", 520, 600));
-        f4.addTicket(new FirstClassTicket("FirstClass", 520, 900));
+        f4.addTicket(new EconomyTicket(400,"Economic", 520));
+        f4.addTicket(new BusinessTicket(440,"Business", 520, 600));
+        f4.addTicket(new FirstClassTicket(404,"FirstClass", 520, 900));
         Flight f5 = new Flight(105, "Paris ", "4:00 am", "8/1/2025", "Geneva", "10:40 am", "8/1/2025");
-        f5.addTicket(new EconomyTicket("Economic", 310));
-        f5.addTicket(new BusinessTicket("Business", 310, 600));
-        f5.addTicket(new FirstClassTicket("FirstClass", 310, 900));
+        f5.addTicket(new EconomyTicket(500,"Economic", 310));
+        f5.addTicket(new BusinessTicket(550,"Business", 310, 600));
+        f5.addTicket(new FirstClassTicket(505,"FirstClass", 310, 900));
         Flight f6 = new Flight(106, "Rome ", "4:10 am", "11/1/2025", "Barcelona", "6:05 am", "11/1/2025");
-        f6.addTicket(new EconomyTicket("Economic", 430));
-        f6.addTicket(new BusinessTicket("Business", 430, 600));
-        f6.addTicket(new FirstClassTicket("FirstClass", 430, 900));
+        f6.addTicket(new EconomyTicket(600,"Economic", 430));
+        f6.addTicket(new BusinessTicket(660,"Business", 430, 600));
+        f6.addTicket(new FirstClassTicket(606,"FirstClass", 430, 900));
         Flight f7 = new Flight(107, "Jeddah ", "16:00 pm", "11/1/2025", "Istanbul", "19:55 am", "11/1/2025");
-        f7.addTicket(new EconomyTicket("Economic", 350));
-        f7.addTicket(new BusinessTicket("Business", 350, 600));
-        f7.addTicket(new FirstClassTicket("FirstClass", 350, 900));
+        f7.addTicket(new EconomyTicket(700,"Economic", 350));
+        f7.addTicket(new BusinessTicket(770,"Business", 350, 600));
+        f7.addTicket(new FirstClassTicket(707,"FirstClass", 350, 900));
         Flight f8 = new Flight(108, "Dammam ", "4:10 am", "14/1/2025", "Abu Dhabi", "6:55 am", "14/1/2025");
-        f8.addTicket(new EconomyTicket("Economic", 530));
-        f8.addTicket(new BusinessTicket("Business", 530, 600));
-        f8.addTicket(new FirstClassTicket("FirstClass", 530, 900));
+        f8.addTicket(new BusinessTicket(800,"Business", 350, 600));
+        f8.addTicket(new FirstClassTicket(880,"FirstClass", 350, 900));
+        f8.addTicket(new FirstClassTicket(808,"FirstClass", 530, 900));
         AllFlifht.add(f);
         AllFlifht.add(f2);
         AllFlifht.add(f3);
@@ -77,7 +77,7 @@ public class Flightbooking {
         // login
         Scanner in = new Scanner(System.in);
         //INSTRUCTOIN for the user to input password 
-        System.out.print(
+        System.out.println(
                 "1. A password must have at least eight characters.\n"
                 + "2. A password consists of only letters and digits.\n"
                 + "3. A password must contain at least two digits \n"
@@ -108,6 +108,8 @@ public class Flightbooking {
         Ticket passticketseat = new EconomyTicket();
         Ticket passticketseat1 = new FirstClassTicket();
         Ticket passticketseat2 = new BusinessTicket();
+        boolean flag2 = false ;   
+
         int choice = 0;
         while (choice != 10) {
             System.out.println("These options will be repeated for you several times to book more than one ticket\n (so choose a number each time)");
@@ -140,6 +142,7 @@ public class Flightbooking {
                        //to choice from list
                         int ti = in.nextInt();
                         Ticket passticket = AllFlifht.get(fl - 1).getTicket(ti - 1);
+                        
                         int i, j, seatNum, c = 0;
                         char seatLetter = 'A';
                         int choice3 = 0;
@@ -147,9 +150,7 @@ public class Flightbooking {
                         boolean flag = true; // loops of running the program
                         System.out.println(" Assign Seats \n Note: It will not be booked into our system because it will come at the time of boarding\n (we only show you the seats you can see at that time so you know about them)");
                         System.out.println("Select your choice: ");
-                        int numOfreservation = 0;
-                        System.out.println("How many seats do you want to book ?");
-                        numOfreservation = in.nextInt();
+                        
                         //Set the value.
                         for (i = 0; i < passticketseat.SeatNumber.length; i++) {
                             for (j = 0; j < passticketseat.SeatNumber[i].length; j++) {
@@ -166,8 +167,7 @@ public class Flightbooking {
                             System.out.println();
                         }
                         //condition
-                        while (c < numOfreservation) {
-                            do {
+                        
                                 System.out.print("Please type the chosen seat(start with row and column, e.g:2B): ");
                                 seatEnter = (in.next()).toUpperCase(); //covert to Upper case
                                 seatNum = Integer.parseInt(seatEnter.charAt(0) + ""); //converts a String to an int
@@ -189,7 +189,7 @@ public class Flightbooking {
                                         }
                                     }
                                 }
-                            } //continue to loop until the condition true
+                             //continue to loop until the condition true
                             while (seatNum < 0 || seatNum > 10 || seatLetter < 'A' || seatLetter > 'F');
                             if (seatNum == 0) {
                                 flag = false;
@@ -209,13 +209,10 @@ public class Flightbooking {
                                 System.out.println();
                             }
                             System.out.println();
-                            c++;
-                        }
-                        //condition if All seats are fully-booked
-                        if (c == 20) {
-                            System.out.println("All seats are now fully-booked.");
-                        }
-                        System.out.println("Dear passenger, please enter your personal information\n enter your First name ");
+                        //to ask the user about their info just once
+                        if (flag2 == false ) {
+                        System.out.println("Dear passenger,\n we will ask you once to enter your personal information, and if you wanted to reserve multiple flights \n it will be automatically linked to this information you about to enter"
+                                +" \n enter your First name ");
                         String Firstname = in.next();
                         if (Passenger.namegenString(Firstname) == true) {
                             p.setFirstName(Firstname);
@@ -254,7 +251,7 @@ public class Flightbooking {
                             p2.Num++;
                         }
                         System.out.println("________________");
-             System.out.println("Enter your Passport Number ( Ex: SZ557907  ,It must include 8 numbers)");
+                     System.out.println("Enter your Passport Number ( Ex: SZ557907  ,It must include 8 digits)");
                     String Passportnumber = in.next();
                     //conditin for Passportnumber 
                         if ( (Passportnumber.length()!= 8)&&(Passenger.namegenString(Name)==true) ) {
@@ -264,9 +261,17 @@ public class Flightbooking {
                             p.setPassportNum(Passportnumber);
                         }
                       
-                        System.out.println("________________");
+                        flag2 = true ;
+                        
+                        }
 
-                        p.reservTicket(passticket.clone(p.NumID, AllFlifht.get(fl - 1)));
+                    p.reservTicket(passticket.clone(p.NumID, AllFlifht.get(fl - 1)));
+                     System.out.println("________________\n");
+                        
+                        System.out.println("You Booked This Flight Successfully !!");
+                        
+                        System.out.println("________________\n");
+                        
                     } catch (IndexOutOfBoundsException e) {
                         System.out.println("IndexOutOfBoundsException PLEASE REWRITE");
                         in.nextLine();
@@ -280,6 +285,8 @@ public class Flightbooking {
                         in.nextLine();
                         err++;
                     }
+                    
+                    
                     break;
                 case 2:
                     System.out.println("________________");
@@ -320,6 +327,7 @@ public class Flightbooking {
                     }
                     break;
                 case 5:
+                    System.out.println("Thank you for using our system, best wishes.");
                     //to end program 
                     System.exit(0);
                     break;
