@@ -11,8 +11,7 @@ leader: Ghada Alotibi
 Student ID:
 -Mayar
 Student ID: 445003256
--Layan saleh
-Student ID: 44511056
+-Layan 
 -Wajn
 Student ID:
 -Leena
